@@ -1,8 +1,8 @@
 module caesar
   implicit none
-  public :: caesar_translate
+  public :: caesar_crypt
 contains
-  function caesar_translate(sentence,index) result(translated)
+  function caesar_crypt(sentence,index) result(translated)
     character(:), allocatable :: sentence, translated
     integer, optional :: index
     integer :: index2
@@ -34,5 +34,5 @@ contains
       end do
     end do
 
-  end function caesar_translate
+  end function caesar_crypt
 end module caesar

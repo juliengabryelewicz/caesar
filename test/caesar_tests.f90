@@ -1,5 +1,5 @@
 module caesar_tests
-  use caesar, only: caesar_translate
+  use caesar, only: caesar_crypt
 
   implicit none
 
@@ -13,7 +13,7 @@ contains
     character(:), allocatable :: result,expect, sentence
     expect = "ERQMRXU"
     sentence = "BONJOUR"
-    result = caesar_translate(sentence)
+    result = caesar_crypt(sentence)
 
     if (result == expect) then
       print *, 'test passed with no index'
@@ -22,7 +22,7 @@ contains
     end if
 
     expect = "DQPLQWT"
-    result = caesar_translate(sentence,2)
+    result = caesar_crypt(sentence,2)
 
     if (result == expect) then
       print *, 'test passed with index'
