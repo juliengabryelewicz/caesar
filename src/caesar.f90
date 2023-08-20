@@ -1,6 +1,6 @@
 module caesar
   implicit none
-  public :: caesar_crypt
+  public :: caesar_crypt, caesar_translate
 contains
 
   function get_index(index) result(new_index)
